@@ -87,19 +87,22 @@ class Viaje {
      * Imprime en pantalla la informacion contenida en los atributos del objeto
      */
     public function __toString() {
-    return ("Datos del viaje:\nCodigo: ". $this->getCodigo(). "\n". 'Destino: '. $this->getDestino(). "\n". 'Cantidad máxima de pasajeros: '. $this->getCantMaxPasajeros(). "\n". "Pasaje:\n". $this->pasajerosAString. "\n" /* json_encode($this->getPasajeros()) */);
+    return ("Datos del viaje:\nCodigo: ". $this->getCodigo(). "\n". 'Destino: '. $this->getDestino(). "\n". 'Cantidad máxima de pasajeros: '. $this->getCantMaxPasajeros(). "\n". "Pasaje:\n". $this->pasajerosAString(). "\n" /* json_encode($this->getPasajeros()) */);
     }
     
-    /**
+    /** Convierte el arreglo $pasajeros a un string legible
      * 
      */
      public function pasajerosAString() {
-       for ($i = 0; $i < count($this->getPasajeros()-1); $i++) {
-          $oracion = "";
+       $oracion = "";
+       foreach ($this->getPasajeros() as $pasajero) {
+            $oracion .= "Nombre: ". $pasajero["nombre"]. " Apellido: ". $pasajero["apellido"]. " DNI ". $pasajero["nroDocumento"]. "\n";
+        }
+       /* for ($i = 0; $i < count($this->getPasajeros())-1; $i++) {
           foreach ($this->getPasajeros() as $pasajero) {
-            $oracion = $i. " Nombre: ". $this->getPasajeros()["nombre"]. " Apellido: ". $this->getPasajeros()["apellido"]. " DNI ". $this->getPasajeros()["nroDocumento"];
+            $oracion .= $i. " Nombre: ". $this->getPasajeros()[$i]["nombre"]. " Apellido: ". $this->getPasajeros()[$i]["apellido"]. " DNI ". $this->getPasajeros()[$i]["nroDocumento"]. "\n";
           }
-       }
+       } */
       return $oracion;
      }
   
