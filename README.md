@@ -1,7 +1,6 @@
-# ViajeFeliz
-
 # Introduccion a la Programacion Orientada a Objetos - Primer Cuat. 2023
-Primer Trabajo Entregable - Consigna:
+
+# Primer Trabajo Entregable: Viaje Feliz - Consigna:
 
 La empresa de Transporte de Pasajeros “Viaje Feliz” quiere registrar la información referente a sus viajes. De cada viaje se precisa almacenar el código del mismo, destino, cantidad máxima de pasajeros y los pasajeros del viaje.
 
